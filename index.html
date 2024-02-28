@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Challenge Project: Cheat Sheet</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <nav>
+        <ul>
+          <li><a id="home" href="#title">Home</a></li>
+          <li id="position_menu">
+            <a href="#position">Position</a>
+
+            <ul id="position_submenu">
+              <li><a href="#static">Static</a></li>
+              <li><a href="#relative">Relative</a></li>
+              <li><a href="#absolute">Absolute</a></li>
+              <li><a href="#fixed">Fixed</a></li>
+              <li><a href="#sticky">Sticky</a></li>
+            </ul>
+          </li>
+          <li><a class="zindex_menu" href="#zindex">Z-Index</a></li>
+          <li id="display_menu">
+            <a href="#display">Display</a>
+
+            <ul id="display_submenu">
+              <li><a href="#inline">Inline</a></li>
+              <li><a href="#block">Block</a></li>
+              <li><a class="inblock" href="#inline_block">Inline-Block</a></li>
+            </ul>
+          </li>
+          <li><a class="float" href="#float">Float</a></li>
+          <li><a class="clear" href="#clear">Clear</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1 id="title">CSS - Display and Positioning</h1>
+      <section class="intro">
+        <h2>Flow of HTML</h2>
+        <p>
+          A browser will render the elements of an HTML document that has no CSS
+          from left to right, top to bottom, in the same order as they exist in
+          the document. This is called the flow of elements in HTML. In addition
+          to the properties that it provides to style HTML elements, CSS
+          includes properties that change how a browser positions elements.
+          These properties specify where an element is located on a page, if the
+          element can share lines with other elements, and other related
+          attributes.
+        </p>
+        <article>
+          There are five properties for adjusting the position of HTML elements
+          in the browser: <em>position</em>, <em>display</em>, <em>z-index</em>,
+          <em>float</em>, <em>clear</em>. Each of these properties will allow us
+          to position and view elements on a web page. They can be used in
+          conjunction with any other styling properties.
+        </article>
+      </section>
+      <section id="position">
+        <h2>Position</h2>
+        <p>
+          The default position of an element can be changed by setting its
+          position property. The position property can take one of five values:
+          <em>static</em> - the default value (it does not need to be
+          specified), <em>relative</em>, <em>absolute</em>, <em>fixed</em>,
+          <em>sticky</em>.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Positions</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="tabletitle" id="static">Static</td>
+              <td>
+                The element is positioned according to the normal flow of the
+                document. The top, right, bottom, left, and z-index properties
+                have no effect. This is the default value.
+              </td>
+            </tr>
+            <tr>
+              <td class="tabletitle" id="relative">Relative</td>
+              <td>
+                Relative positioning in HTML/CSS refers to a method of placing
+                an element relative to its normal position in the document flow,
+                without affecting the position of other elements. When an
+                element is relatively positioned, it can be shifted using the
+                top, bottom, left, and right properties. These properties
+                determine the offset of the element from its initial position,
+                allowing for precise adjustments. Relative positioning is often
+                used in conjunction with absolute positioning or other
+                positioning techniques to create complex layouts or effects on a
+                webpage.
+              </td>
+            </tr>
+            <tr>
+              <td class="tabletitle" id="absolute">Absolute</td>
+              <td>
+                Absolute positioning in HTML/CSS involves positioning an element
+                relative to its nearest positioned ancestor (an ancestor element
+                that is set to a position other than the default static). If
+                there is no positioned ancestor, the element is positioned
+                relative to the initial containing block, typically the 'body'
+                element. Absolute positioning removes the element from the
+                normal document flow, so it doesn't affect the layout of other
+                elements. The positioning of an element can be defined using the
+                top, bottom, left, and right properties. This technique is
+                commonly used to precisely place elements on a webpage or to
+                create overlays, pop-up menus, or other dynamic content.
+              </td>
+            </tr>
+            <tr>
+              <td class="tabletitle" id="fixed">Fixed</td>
+              <td>
+                Fixed positioning in HTML/CSS involves positioning an element
+                relative to the browser window or the viewport. Unlike absolute
+                positioning, which is relative to the nearest positioned
+                ancestor, fixed positioning is always relative to the viewport,
+                regardless of scrolling. Fixed-positioned elements are removed
+                from the normal document flow, so they don't affect the layout
+                of other elements. The position of a fixed element can be
+                defined using the top, bottom, left, and right properties. This
+                technique is commonly used for creating elements such as
+                navigation bars, headers, or advertisements that remain in a
+                fixed position on the screen even when the user scrolls the
+                page.
+              </td>
+            </tr>
+            <tr>
+              <td class="tabletitle" id="sticky">Sticky</td>
+              <td>
+                Sticky positioning in HTML/CSS is a hybrid between relative and
+                fixed positioning. It allows an element to be positioned
+                relative to its normal position in the document flow until a
+                specified scroll point is reached, at which point it becomes
+                fixed to a certain position in the viewport. Sticky positioning
+                is achieved by setting the 'position: sticky;' property on an
+                element and specifying the offset at which it becomes fixed
+                using top, bottom, left, or right properties. Sticky positioning
+                is commonly used for headers, navigation bars, or sidebars that
+                remain visible as the user scrolls down the page, providing
+                convenient access to important content or navigation options.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section id="zindex">
+        <h2>Z-Index</h2>
+        <p>
+          The "z-index" property in HTML/CSS controls the stacking order of
+          positioned elements on a webpage along the z-axis, which is
+          perpendicular to both the x-axis (horizontal) and y-axis (vertical).
+          Essentially, it determines which elements are displayed in front of or
+          behind others. A higher z-index value brings an element closer to the
+          viewer (in front of other elements), while a lower value places it
+          further away (behind other elements). If elements have the same
+          z-index, the stacking order is determined by their order in the HTML
+          document. For the "z-index" property to work, an element must have a
+          position value other than "static" (such as "relative", "absolute", or
+          "fixed"). It's commonly used to control the layering of elements in
+          complex layouts, such as dropdown menus, modal windows, or overlapping
+          sections of a webpage.
+        </p>
+      </section>
+      <section id="display">
+        <h2>Display</h2>
+        <p>
+          The "display" property in HTML/CSS controls how an element is rendered
+          in the document layout. It specifies the type of box used for an HTML
+          element and affects its visibility and behavior within the document
+          flow.
+        </p>
+        <table>
+          <thead>
+            <th>Display</th>
+            <th>Description</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="tabletitle" id="inline">Inline</td>
+              <td>
+                The "inline" value for the "display" property in HTML/CSS causes
+                the element to generate an inline-level box. This means the
+                element does not start on a new line and only takes up as much
+                width as necessary, allowing other inline elements to flow
+                alongside it within the same line of text. Elements with
+                "display: inline" behave similarly to words or phrases within a
+                paragraph. They do not create a line break before or after
+                themselves and can be considered part of the surrounding text
+                flow. Examples of elements commonly set to "display: inline"
+                include 'span', 'a', 'strong', 'em', and 'img'. This property is
+                useful when you want elements to appear side by side
+                horizontally, such as creating a navigation menu with links or
+                displaying a series of inline icons.
+              </td>
+            </tr>
+            <tr>
+              <td class="tabletitle" id="block">Block</td>
+              <td>
+                The "block" value for the "display" property in HTML/CSS causes
+                the element to generate a block-level box. This means the
+                element starts on a new line and takes up the full width
+                available, extending the entire width of its containing element
+                by default. Elements with "display: block" do not allow other
+                elements to sit alongside them on the same line; they create a
+                new line before and after themselves. They are often used for
+                elements that are intended to form standalone sections of
+                content, such as paragraphs, headings, divs, and list items
+                'li'. This property is useful when you want elements to stack
+                vertically, with each element taking up its own line in the
+                document layout. It's commonly used for structuring the main
+                content of a webpage or for creating larger, self-contained
+                sections of content.
+              </td>
+            </tr>
+            <tr>
+              <td class="tabletitle" id="inline_block">Inline-Block</td>
+              <td>
+                The "inline-block" value for the "display" property in HTML/CSS
+                combines aspects of both "inline" and "block" elements. Elements
+                with "display: inline-block" generate an inline-level box,
+                meaning they can sit alongside other elements on the same line,
+                similar to inline elements. However, they also behave like
+                block-level elements in terms of layout, allowing you to specify
+                width, height, margins, and padding, and they start on a new
+                line when necessary. This property is particularly useful when
+                you want elements to flow horizontally like inline elements but
+                also want to control their dimensions and spacing like
+                block-level elements. It's commonly used for elements like
+                buttons, images, or containers that need to be positioned inline
+                but still have block-level styling properties applied to them.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section id="float">
+        <h2>Float</h2>
+        <p>
+          The "float" property in HTML/CSS is used to specify whether an element
+          should be floated to the left or right of its containing element,
+          allowing content to flow around it. When an element is floated, it is
+          taken out of the normal document flow and moved to the left or right
+          side of its containing element, with other content wrapping around it.
+          Common values for the "float" property are: "left": Floats the element
+          to the left, allowing content to flow around its right side. "right":
+          Floats the element to the right, allowing content to flow around its
+          left side. "none": Default value, meaning the element does not float
+          and appears in the normal document flow. "inherit": Inherits the float
+          behavior from its parent element. Floating elements are often used for
+          creating layouts where text or other content wraps around images, or
+          for creating multi-column layouts by floating elements side by side.
+          However, it's important to note that floating elements can sometimes
+          lead to layout issues, such as collapsing parent containers or
+          overlapping content, so it's essential to use them carefully and
+          consider alternative layout techniques like flexbox or CSS grid where
+          appropriate. Additionally, the use of floats for layout is becoming
+          less common with the introduction of newer layout techniques in CSS.
+        </p>
+      </section>
+      <section id="clear">
+        <h2>Clear</h2>
+        <p>
+          The "clear" property in HTML/CSS is used to control the behavior of
+          elements that are affected by floated elements. When an element is
+          cleared, it ensures that it appears below any floated elements that
+          precede it in the document flow. Common values for the "clear"
+          property are: "none": Default value, meaning the element is not
+          cleared and can be positioned alongside floated elements. "left": The
+          element clears any floated elements on the left side, ensuring it
+          appears below them. "right": The element clears any floated elements
+          on the right side, ensuring it appears below them. "both": The element
+          clears floated elements on both the left and right sides, ensuring it
+          appears below them regardless of their position. The "clear" property
+          is often used in conjunction with floated elements to ensure proper
+          layout and prevent elements from overlapping or being affected by
+          floating content. It's commonly used in scenarios such as clearing
+          floats before starting a new section of content or ensuring that
+          elements in a multi-column layout stack correctly.
+        </p>
+      </section>
+    </main>
+    <footer>
+      <p>Challenge Project: Build Your Own Cheat Sheet </p>
+    </footer>
+  </div>
+</body>
+
+</html>
