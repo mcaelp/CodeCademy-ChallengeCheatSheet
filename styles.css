@@ -1,0 +1,154 @@
+#static,
+#relative,
+#absolute,
+#fixed,
+#sticky,
+#inline,
+#block,
+#inline_block,
+#title,
+section {
+  /*used scroll margin top so the different sections and anchors are properly aligned when selected*/
+  scroll-margin-top: 67px;
+}
+.container {
+  /*created the container div class so the entire page can have a max width and always be centered*/
+  max-width: 1200px;
+  margin: 0 auto;
+}
+header {
+  /*
+  -Fixed position so the nav bar always stays on top for easy navigation
+  -Put top to zero so there is no space between the bar and the top of the page,
+  put left to zero also because when the browser page got too big the bar would move from the left and stay uncentered, 
+  this seemed to do the trick
+  -used z-index 1 so the bar and the menus stay on front of the page*/
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  background-color: rgba(164, 164, 164, 0.95);
+  z-index: 1;
+}
+main {
+  /*used relative position to push the page 50px(using top), so the title is not behind the nav bar*/
+  position: relative;
+  top: 50px;
+  margin: 0 20px;
+}
+body {
+  /*body settings*/
+  color: rgb(250, 235, 215);
+  text-align: justify;
+  background-color: rgb(124, 135, 125);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+nav ul {
+  /*aligns the nav bar to the center*/
+  text-align: center;
+}
+nav ul li {
+  /*targets list items within the ul within the nav */
+  display: inline-block;
+  padding: 5px 10px;
+}
+
+a {
+  /*- Applied none for text decoration to remove the underline and default color
+  -Used inherit for color so the anchors could just be the same color as the other text without 
+  necessarily having to define a new color just for them*/
+  text-decoration: none;
+  color: inherit;
+}
+
+#position_menu,
+#display_menu {
+  /* - Applying "position: relative;" to position_menu and display_menu establishes a new positioning context,
+  allowing its absolutely positioned children (position_submenu and display_submenu) to be positioned relative to it.
+  - Using "display: inline-block;" for both position_menu and display_menu ensures they are displayed 
+  inline within the navigation bar while still allowing block-level properties to be 
+  applied to them, such as width, height, padding, and margins.*/
+  position: relative;
+  display: inline-block;
+}
+
+#position_submenu,
+#display_submenu {
+  /*-display none so the dropdown menu is hidden
+  -position absolute so the dropdown menu is positioned relatively to the parent (position_menu and display_menu)
+  -gave the top margin 5px so the menu does not overlap the word "display" while dropped
+  -used border-radius to round a bit the dropdown menus*/
+  display: none;
+  position: absolute;
+  background-color: rgba(51, 84, 58, 0.9);
+  padding: 0px 0px;
+  margin: 5px 0 0 0;
+  border-radius: 10px;
+  text-align: justify;
+}
+
+#position_menu:hover #position_submenu {
+  /*used block so the menu drops down directly under the position anchor, same for the display_menu below*/
+  display: block;
+}
+
+#display_menu:hover #display_submenu {
+  display: block;
+}
+
+.inblock,
+#inline_block {
+  /*the nowrap here prevents the word "inline-block" from being divided into two*/
+  white-space: nowrap;
+}
+#position_submenu a:hover,
+#display_submenu a:hover,
+#position_menu a:hover,
+#display_menu a:hover,
+#home:hover,
+.zindex_menu:hover,
+.float:hover,
+.clear:hover {
+  /*used hover so the color of the anchor change when hovered on*/
+  color: 	rgb(0, 0, 0);
+}
+#title {
+  text-align: center;
+  width: 100%;
+  font-size: 50px;
+}
+table {
+  border: solid 5px black;
+}
+thead {
+  color: rgb(250, 235, 215);
+  text-align: center;
+}
+th,
+td {
+  border: 2px solid rgb(0, 0, 0);
+  padding: 10px 10px;
+}
+p {
+  font-size: 20px;
+}
+article {
+  font-weight: bold;
+  font-size: 17px;
+}
+h2 {
+  font-size: 25px;
+}
+.tabletitle {
+  font-weight: bold;
+  font-size: 15px;
+}
+td {
+  font-size: 17px;
+}
+footer p{
+  padding: 80px 20px 0px 20px;
+  font-size: 15px;
+  font-style: italic;
+}
