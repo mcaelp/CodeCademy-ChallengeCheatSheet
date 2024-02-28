@@ -14,6 +14,7 @@ section {
 .container {
   /*created the container div class so the entire page can have a max width and always be centered*/
   max-width: 1200px;
+  min-width: 441px;
   margin: 0 auto;
 }
 header {
